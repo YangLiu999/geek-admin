@@ -1,8 +1,15 @@
 import { ref, computed } from 'vue';
+import {useStorage} from './common'
 
 export function useTodos() {
     let title = ref('')
-    let todos = ref([{ title: '吃饭', done: false }])
+    //let todos = ref([{ title: '吃饭', done: false }])
+    // 使用 watchEffect, 数据变化之后会把数据同步到 localStorage 之上
+    // let todos = ref(JSON.parse(localStorage.getItem('todos') || '[]'))
+    // watchEffect(() => {
+    //     localStorage.setItem('todos', JSON.stringify(todos.value))
+    // })
+    let todos = useStorage('todos', [{ title: '吃饭', done: false }])
 
     function addTodo() {
         todos.value.push({ title: title.value, done: false });
