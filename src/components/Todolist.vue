@@ -13,7 +13,8 @@
         <div>
             全选<input type="checkbox" v-model="allDone">
             <span>{{active}}  / {{all}}</span>
-        </div>  
+            <h1 @click="toggle">click</h1>
+        </div>
     </div>
 </template>
 
@@ -21,6 +22,8 @@
     //import { ref,computed } from 'vue';
     import {useTodos} from '../utils/Todolist';
     import fs from 'fs';
+    import { useFullscreen } from '@vueuse/core'
+    const {isFullscreen, enter,exit,toggle} = useFullscreen()
     // let count = ref(1)
     // function add(){
     //     count.value++
@@ -57,7 +60,7 @@
     // }
 
     let { title, todos, addTodo, clear, active, all, allDone } = useTodos();
-
+    
 </script>
 
 <style>
