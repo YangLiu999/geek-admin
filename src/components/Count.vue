@@ -18,4 +18,7 @@
         store.commit('add');
     }
 
+    let double = computed(() => store.getters.double);
+
+
 </script>
