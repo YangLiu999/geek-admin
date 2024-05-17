@@ -1,4 +1,10 @@
 // 手写迷你vuex：使用Store类管理数据，_state存储数据，mutations存储数据修改，state使用reactive包裹成响应式数据
+//vuex新的几个概念
+//1.state：定义数据
+//2.mutations：定义修改数据的逻辑
+//3.组件中使用commit调用mutation
+//4.getters：实现vuex世界的计算属性
+//5.action:定义异步任务，内部调研mutation去同步数据
 import { inject, reactive } from 'vue';
 
 // 定义一个常量STORE_KEY，用于存储store
