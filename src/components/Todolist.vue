@@ -63,8 +63,23 @@
     
 </script>
 
-<style>
-    /* h1 {
-        color: red;
-    } */
+<!-- npm install -D sass -->
+<style lang="scss" scoped>
+$padding:10px;
+$white:#fff;
+ul {
+  width:500px;
+  margin:0 auto;
+  padding: 0;
+  li {
+    &:hover {
+      cursor: pointer;
+    }
+    list-style-type: none;
+    margin-bottom: $padding;
+    padding: $padding;
+    background: $white;
+    box-shadow: 1px 3px 5px rgba(0, 0, 0, 0.1);
+  }
+}
 </style>
